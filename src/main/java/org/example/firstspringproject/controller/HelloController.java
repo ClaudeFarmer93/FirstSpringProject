@@ -22,4 +22,10 @@ public class HelloController {
         return "Welcome back " + name;
     }
 
+    @GetMapping("/search")
+    public String printquery(@RequestParam String q) {
+
+        return "You searched for " + q;
+    }
+
 }

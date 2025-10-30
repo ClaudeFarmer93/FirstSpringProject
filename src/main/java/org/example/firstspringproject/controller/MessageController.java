@@ -37,4 +37,11 @@ public class MessageController {
                 .findFirst().ifPresent(messages::remove);
     }
 
+    @GetMapping("/search")
+    public Message getMessageById(@RequestParam String id) {
+        return messages.stream()
+                .filter(m -> m.getId().equals(id))
+                .findFirst().get();
+    }
+
 }
